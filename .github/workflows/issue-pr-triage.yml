@@ -14,6 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Triage to Content Project
     steps:
+    - name: Print stuff
+      run: |
+        echo "a`$GITHUB_EVENT_NAME`a"
+
     - name: Triages NEW issues and NEW pull requests to the Content Project
       uses: srggrs/assign-one-project-github-action@1.2.1
       if: github.event.action == 'opened'
